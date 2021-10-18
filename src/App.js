@@ -11,6 +11,7 @@ import Login from './Pages/Login';
 import Signup from './Pages/Signup';
 import PagesNotFound from './Pages/PagesNotFound';
 import AuthProvider from './contexts/AuthProvider';
+import Footer from './components/Footer/Footer';
 
 
 function App() {
@@ -59,6 +60,7 @@ function App() {
           <PagesNotFound></PagesNotFound>
         </Route>
          </Switch>
+         <Footer></Footer>
      </Router>
      
      </AuthProvider>

@@ -9,7 +9,8 @@ import useAuth from '../../hooks/useAuth';
 
 
 const Header = () => {
-  const {user} = useAuth()
+  const {user, logOut} = useAuth();
+  const {displayName,photoURL, email} =user;
     return (
        
     <Navbar className="header" expand="lg">
@@ -17,7 +18,7 @@ const Header = () => {
     <Navbar.Brand href="#home"><img width="70px" src={log} alt="" /> <span className="font-size">Troma Center</span> </Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
-      <Nav className="ms-auto">
+      <Nav className="ms-auto align-items-center">
         <Nav.Link as={NavLink} className="text-white" to="/home">Home</Nav.Link>
 
         <Nav.Link as={NavLink} className="text-white" to="/about">About</Nav.Link>
@@ -26,7 +27,9 @@ const Header = () => {
 
         <Nav.Link as={NavLink} className="text-white" to="/services">Services</Nav.Link>
 
-        { user.displayName ? ( 
+        <Nav.Link as={NavLink} className="text-white" to="/cart"> <FontAwesomeIcon icon={faHandHoldingMedical} /></Nav.Link>
+
+        {!displayName? ( 
         <>
           <Nav.Link as={NavLink} className="text-white" to="/signup">Sign Up</Nav.Link>
          
@@ -34,17 +37,16 @@ const Header = () => {
         
         </> 
         ):(
-          <span>{user.displayName}</span>
-        )}
+          <NavDropdown title={ <img style={{width: '45px', borderRadius:'50%'}} src={photoURL} alt="" />} >
 
-        <Nav.Link as={NavLink} className="text-white" to="/cart"> <FontAwesomeIcon icon={faHandHoldingMedical} /></Nav.Link>
-        
-        <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-          <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-          <NavDropdown.Divider />
-          <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+          <div className="text-center">
+             <h6>{displayName}</h6>
+            <button onClick={logOut} className="btn btn-primary">Sign Out</button>
+          </div>
+
         </NavDropdown>
-      </Nav>
+        )}
+     </Nav>
     </Navbar.Collapse>
   </Container>
 </Navbar>
