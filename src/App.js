@@ -10,11 +10,13 @@ import Cart from './Pages/Cart';
 import Login from './Pages/Login';
 import Signup from './Pages/Signup';
 import PagesNotFound from './Pages/PagesNotFound';
+import AuthProvider from './contexts/AuthProvider';
 
 
 function App() {
   return (
     <div> 
+     <AuthProvider>
      <Router>
        <Header></Header>
 
@@ -59,6 +61,7 @@ function App() {
          </Switch>
      </Router>
      
+     </AuthProvider>
    
     </div>
   );

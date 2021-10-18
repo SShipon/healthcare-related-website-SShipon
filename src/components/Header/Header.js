@@ -5,9 +5,11 @@ import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
  import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHandHoldingMedical } from '@fortawesome/free-solid-svg-icons'
 import { NavLink } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 
 
 const Header = () => {
+  const {user} = useAuth()
     return (
        
     <Navbar className="header" expand="lg">
@@ -24,9 +26,16 @@ const Header = () => {
 
         <Nav.Link as={NavLink} className="text-white" to="/services">Services</Nav.Link>
 
-        <Nav.Link as={NavLink} className="text-white" to="/signup">Sign Up</Nav.Link>
-
-        <Nav.Link as={NavLink} className="text-white" to="/login">Log In</Nav.Link>
+        { user.displayName ? ( 
+        <>
+          <Nav.Link as={NavLink} className="text-white" to="/signup">Sign Up</Nav.Link>
+         
+         <Nav.Link as={NavLink} className="text-white" to="/login">Log in</Nav.Link>
+        
+        </> 
+        ):(
+          <span>{user.displayName}</span>
+        )}
 
         <Nav.Link as={NavLink} className="text-white" to="/cart"> <FontAwesomeIcon icon={faHandHoldingMedical} /></Nav.Link>
         
