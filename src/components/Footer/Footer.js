@@ -50,7 +50,7 @@ const Footer = () => {
                    <div className="col-md-3 col-sm-6">
                          <h4>FOLLOW US</h4>
                     <ul className="list-unstyled font-awsome">
-                        <li><i class="fas fa-home"></i> Gulshan Dhaka</li>
+                        <li><i class="fas fa-home"></i> Comilla Shaktola</li>
                         <li><i class="fas fa-phone"></i> +8801703059461</li>
                         <li><i class="fas fa-question-circle"></i> +4574754</li>
                         <li><a href="https://www.facebook.com/mdshipon.chowdhury.940"><i class="fab fa-facebook"></i></a></li>
@@ -61,7 +61,7 @@ const Footer = () => {
                 {/*Footer Bottom */}
                 <div className="footer-bottom">
 
-                    <p className="text-center">&copy;{ new Date().getFullYear()} Webflow, Inc. All rights reserved shamsul islam shipon.</p>
+                    <p className="copyright">&copy;{ new Date().getFullYear()} Webflow, Inc. All rights reserved shamsul islam shipon.</p>
 
                 </div>
             </div>

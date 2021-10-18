@@ -10,7 +10,7 @@ import useAuth from '../../hooks/useAuth';
 
 const Header = () => {
   const {user, logOut} = useAuth();
-  const {displayName,photoURL, email} =user;
+  const {displayName,photoURL,} =user;
     return (
        
     <Navbar className="header" expand="lg">
@@ -41,7 +41,7 @@ const Header = () => {
 
           <div className="text-center">
              <h6>{displayName}</h6>
-            <button onClick={logOut} className="btn btn-primary">Sign Out</button>
+            <button onClick={logOut} className="btn btn-info">Sign Out</button>
           </div>
 
         </NavDropdown>
