@@ -1,10 +1,17 @@
 
 import './App.css';
+import Services from './Pages/Services/Services';
+
+
+
+
 
 function App() {
   return (
-    <div className="">
-      
+    <div> 
+    
+   <Services></Services> 
+   
     </div>
   );
 }
