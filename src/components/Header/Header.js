@@ -15,7 +15,7 @@ const Header = () => {
        
     <Navbar className="header" expand="lg">
     <Container className="navbar">
-    <Navbar.Brand href="#home"><img width="70px" src={log} alt="" /> <span className="font-size">Troma Center</span> </Navbar.Brand>
+    <Navbar.Brand href="#home"><img width="70px" src={log} alt="" /> <span className="font-size">Comilla Morden Hospital</span> </Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="ms-auto align-items-center">
