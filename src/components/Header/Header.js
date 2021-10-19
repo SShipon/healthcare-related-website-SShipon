@@ -13,7 +13,7 @@ const Header = () => {
   const {displayName,photoURL,} =user;
     return (
        
-    <Navbar className="header" expand="lg">
+    <Navbar  sticky="top" className="header" expand="lg">
     <Container className="navbar">
     <Navbar.Brand href="#home"><img width="70px" src={log} alt="" /> <span className="font-size">Comilla Morden Hospital</span> </Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />

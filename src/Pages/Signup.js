@@ -1,24 +1,115 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Col, Form, FormControl, InputGroup, Row } from "react-bootstrap";
+import useAuth from "../hooks/useAuth.js";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope, faLock, faUser, faLink } from "@fortawesome/free-solid-svg-icons";
+import { NavLink, } from "react-router-dom";
+
+
+
 const Signup = () => {
+    const {
+        getEmail,
+        getPassword,
+        signUp,
+        getName,
+        getPhoto,
+        error,
+      } = useAuth();
+
     return (
-        <div className="login-form">
-            <div>
-            <h2>Please create account</h2>
-            <form onSubmit="">
-               <input className="mb-2" type="email" name="" id="" placeholder="Your Email"/>
-               <br/>
-               <input className="mb-2" type="password" name="" id="" placeholder="Your password"/>
-               <br/> 
-               <input className="mb-2" type="password" name="" id="" placeholder="Re-enter password"/>
-               <br/>
-               <input className="mb-2" type="submit" value="Submit" />
-               </form>
-                 </div>
-               <p>Already have an account?<Link
-               to="/login">Login</Link></p>
-            </div>
-    );
+        <div className="text-center my-4">
+      <h2 className="text-Warning">Please You Sign-Up</h2>
+      <p className=" mt-2">Sign Up with Email & Password</p>
+      <p className="text-danger text-center">{error}</p>
+      <div className="w-25 mx-auto">
+        <Form onSubmit={signUp}>
+          <Row>
+            <Col className="text-start">
+              <Form.Label htmlFor="name" visuallyHidden>
+                Your Name
+              </Form.Label>
+              <InputGroup className="mb-2">
+                <InputGroup.Text>
+                  <FontAwesomeIcon icon={faUser}></FontAwesomeIcon>
+                </InputGroup.Text>
+                <FormControl
+                 required
+                  onBlur={getName}
+                  type="text"
+                  autoComplete="current-name"
+                  id="name"
+                  placeholder="Enter your Name"
+                />
+              </InputGroup>
+            </Col>
+          </Row>
+          <Row>
+            <Col className="text-start">
+              <Form.Label htmlFor="email" visuallyHidden>
+                Your Email Address
+              </Form.Label>
+              <InputGroup className="mb-2">
+                <InputGroup.Text>
+                  <FontAwesomeIcon icon={faEnvelope}></FontAwesomeIcon>
+                </InputGroup.Text>
+                <FormControl
+                 required
+                  onBlur={getEmail}
+                  type="email"
+                  autoComplete="current-email"
+                  id="email"
+                  placeholder="Enter your email address"
+                />
+              </InputGroup>
+            </Col>
+          </Row>
+          <Row className="mt-2">
+            <Col className="text-start">
+              <Form.Label htmlFor="password" visuallyHidden>
+                Your Password
+              </Form.Label>
+              <InputGroup className="mb-2">
+                <InputGroup.Text>
+                  <FontAwesomeIcon icon={faLock}></FontAwesomeIcon>
+                </InputGroup.Text>
+                <FormControl required onBlur={getPassword} type="password" autoComplete="current-password"
+                  id="password"placeholder="Enter your password"/>
+              </InputGroup>
+            </Col>
+          </Row>
+          <Row>
+            <Col className="text-start">
+              <Form.Label htmlFor="name" visuallyHidden>
+                Your Profile photo URL
+              </Form.Label>
+              <InputGroup className="mb-2">
+                <InputGroup.Text>
+                  <FontAwesomeIcon icon={faLink}></FontAwesomeIcon>
+                </InputGroup.Text>
+                <FormControl
+                 required
+                  onBlur={getPhoto}
+                  type="text"
+                  autoComplete="current-text"
+                  id="photo"
+                  placeholder="Enter valid photo url "
+                />
+              </InputGroup>
+            </Col>
+          </Row>
+          <button type="submit" className="btn btn-primary mt-2 w-100">Sign up</button>
+        </Form>
+      </div>
+      <p className="mt-2">
+        <NavLink className="text-decoration-none" to="/login">
+          Already have an account? Please login!
+        </NavLink>
+      </p>
+
+
+    </div>
+  );
 };
 
 export default Signup;

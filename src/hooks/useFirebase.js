@@ -1,5 +1,15 @@
 import {useEffect, useState} from 'react'
-import {signInWithEmailAndPassword,GithubAuthProvider, getAuth, signInWithPopup, GoogleAuthProvider,onAuthStateChanged, signOut} from "firebase/auth";
+import {sendEmailVerification,
+       updateProfile,
+       createUserWithEmailAndPassword,
+       signInWithEmailAndPassword,
+       GithubAuthProvider,
+       signOut,
+       getAuth, 
+       signInWithPopup,
+       GoogleAuthProvider,
+      onAuthStateChanged, 
+      } from "firebase/auth";
 import initializeAuthentication from "../firebase/firebase.init";
 
 initializeAuthentication()
@@ -8,13 +18,13 @@ const googleProvider = new GoogleAuthProvider();
 const githubProvider = new GithubAuthProvider();
 
 const auth = getAuth();
-
-
 const useFirebase = () => {
 
    const [user, setUser] = useState({});
    const [error, setError] = useState("");
    const [email, setEmail] = useState("");
+   const [name, setName]   = useState("");
+   const [photo, setPhoto] = useState("");
    const [password, setPassword] = useState("");
 
 
@@ -41,14 +51,33 @@ function signInWithGithub(){
 }
 //Email sign in
 
-function signInWithEmail(){
-  signInWithEmailAndPassword(email, password)
+function signInWithEmail(e){
+  e.preventDefault();
+  signInWithEmailAndPassword(auth,email, password)
   .then(result =>{
       setUser(result.user);
   }).catch(error => {
       setError(error.message)
   });
 }
+ function setNameAndImage (){
+  updateProfile(auth.currentUser, {
+    displayName: name, photoURL: photo,
+  }).then(() => {
+    
+  }).catch((error) => {
+    setError(error.message)
+  });
+}
+ // Email verification sent!
+ function eamailVerify(){
+  sendEmailVerification(auth.currentUser)
+  .then(() => {
+   alert(`an Verification hs  benn set to  `)
+  });
+
+ }
+
 //Get the currently signed-in user
   useEffect(() =>{
    const unsubscribe = onAuthStateChanged(auth, (signInUser) => {
@@ -59,6 +88,7 @@ function signInWithEmail(){
       });
       return () => unsubscribe;
   },[]);
+
 
   // logout
   function logOut(){
@@ -71,26 +101,54 @@ function signInWithEmail(){
       });
  }
 
- //getEmail
 
- function getEmail(e){
-   setEmail(e?.target.value)
-
+ //sign up with email password
+ function signUp(e){
+   e.preventDefault()
+  createUserWithEmailAndPassword(auth, email, password)
+  .then((result)=>{
+    setNameAndImage ();
+    eamailVerify();
+    alert('user has been created ')
+  }).catch(error =>{
+    setError(error.message)
+  })
  }
+
+
+ 
+ //getName
+ function getName(e){
+   setName(e?.target?.value)
+ }
+ 
+ function getEmail(e){
+  setEmail(e?.target?.value)
+
+}
  //getPassword
 
  function getPassword(e){
-  setPassword(e?.target.value)
+  setPassword(e?.target?.value)
+
+}
+//getPhoto URL
+
+function getPhoto(e){
+  setPhoto(e?.target?.value)
 
 }
 
 //Get the currently signed-in user end
     return{
-      
+      eamailVerify,
+      getName,
+      signUp,
       logOut,
       getEmail,
       signInWithEmail,
       getPassword,
+      getPhoto,
       user,
       error,
       setUser,
