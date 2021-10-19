@@ -79,7 +79,7 @@ const Login = () => {
           <img src={google} width="46px" alt="google-icon" />
         </button>
         
-          <button className="" onClick={signInWithGithub}>
+          <button onClick={signInWithGithub}>
           <img width="46px" src={github} alt="github-icon" />
         </button>
       </div>
