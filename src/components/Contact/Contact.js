@@ -5,7 +5,7 @@ import Slide from "react-reveal/Slide";
 
 const Contact = () => {
   return (
-    <div >
+    <div>
       <ContactForm />
     </div>
   );
@@ -19,11 +19,9 @@ function ContactForm() {
       </Bounce>
 
       <Bounce left>
-        
         <h3 className="text-center text-muted mb-4">
           Your Contats page
         </h3>
-      
       </Bounce>
       <div>
         <Container>

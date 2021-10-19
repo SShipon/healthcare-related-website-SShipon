@@ -8,6 +8,7 @@ import { NavLink, } from "react-router-dom";
 
 
 const Signup = () => {
+  const {AllContexts} = useAuth()
     const {
         getEmail,
         getPassword,
@@ -15,11 +16,11 @@ const Signup = () => {
         getName,
         getPhoto,
         error,
-      } = useAuth();
+      } = AllContexts;
 
     return (
         <div className="text-center my-4">
-      <h2 className="text-Warning">Please You Sign-Up</h2>
+      <h2 className="text-warning">Please You Sign-Up</h2>
       <p className=" mt-2">Sign Up with Email & Password</p>
       <p className="text-danger text-center">{error}</p>
       <div className="w-25 mx-auto">

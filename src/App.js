@@ -9,7 +9,7 @@ import Services from './Pages/Services';
 import Cart from './Pages/Cart';
 import Login from './Pages/Login';
 import Signup from './Pages/Signup';
-import PagesNotFound from './Pages/PagesNotFound';
+import PagesNotFound from './Pages/PageNotFound';
 import AuthProvider from './contexts/AuthProvider';
 import Footer from './components/Footer/Footer';
 

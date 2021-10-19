@@ -9,9 +9,11 @@ import useAuth from '../../hooks/useAuth';
 
 
 const Header = () => {
-  const {user, logOut} = useAuth();
-  const {displayName,photoURL,} =user;
-    return (
+  const {AllContexts} =useAuth();
+  const {user, logOut} = AllContexts;
+  const {displayName,photoURL } = user;
+
+   return (
        
     <Navbar  sticky="top" className="header" expand="lg">
     <Container className="navbar">

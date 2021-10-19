@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react'
+ import {useEffect, useState} from 'react'
 import {sendEmailVerification,
        updateProfile,
        createUserWithEmailAndPassword,
@@ -160,4 +160,4 @@ function getPhoto(e){
     } ;
 };
 
-export default useFirebase;
+export default useFirebase; 

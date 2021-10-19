@@ -1,10 +1,9 @@
 import React from 'react';
 
-const Services = (props) => {
-    console.log(props);
+const Services = () => {
     return (
         <div>
-            <h2>this services</h2>
+            <h1>this is service </h1>
         </div>
     );
 };
