@@ -12,7 +12,6 @@ Technologies we used:
 -  fortawesome/react-fontawesome
 -  testing-library/jest-dom
 -  testing-library/react
--  testing-library/user-event
 -  bootstrap
 -  firebase
 -  react-bootstrap
@@ -20,5 +19,4 @@ Technologies we used:
 -  react-rating
 -  react-reveal
 -  react-router-dom
--  react-scripts
--  web-vitals
+-  type-writer
