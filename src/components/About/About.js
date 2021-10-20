@@ -8,7 +8,6 @@ const About = () => {
       <Container>
         <Zoom>
           <h2 className="text-center text-white mb-4">
-            WELCOME TO CODING CLUB INSTITUTE
           </h2>
         </Zoom>
         <Row>
