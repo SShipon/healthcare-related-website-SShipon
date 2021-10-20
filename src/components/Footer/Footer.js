@@ -36,13 +36,13 @@ const Footer = () => {
                    <div className="col-md-3 col-sm-6">
                          <h4>HELP</h4>
                     <ul className="list-unstyled">
-                        <li>University</li>
-                        <li>Blog</li>
-                        <li>Ebooks</li>
-                        <li>Froum</li>
-                        <li>Community</li>
-                        <li>Hire an Exper</li>
-                        <li>Customers</li>
+                        <li>Saturday: 24 Hours</li>
+                        <li>Sunday: 24 Hours </li>
+                        <li>Monday: 24 Hours</li>
+                        <li>Tuesday: 24 Hours</li>
+                        <li>Wednesday: 24 Hours</li>
+                        <li>Tusrsday : 24 Hours</li>
+                        <li>Friday : 24 Hours</li>
                     </ul>
 
                     </div>
