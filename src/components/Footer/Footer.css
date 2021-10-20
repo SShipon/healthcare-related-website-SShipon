@@ -1,12 +1,4 @@
-.main-footer{
-    background-color: rgb(53, 58, 58);
-    color: #fff;
-    margin-top: 10px;
-    padding-bottom: 10px;
-    
-    }
-    
-    .text-content h4{
+   .text-content h4{
       margin-top:10px;
     }
     .text-content h4:hover{
@@ -37,3 +29,10 @@
       border-radius: 5px;
 
     }
+    .main-footer{
+      background-color: rgb(53, 58, 58);
+      color: #fff;
+      margin-top: 10px;
+      padding-bottom: 10px;
+      
+      }

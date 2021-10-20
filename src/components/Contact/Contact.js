@@ -73,7 +73,7 @@ function ContactForm() {
                   rows={3}
                 />
               </Form.Group>
-              <Button className="mb-5 px-4" variant="primary" type="submit">
+              <Button className="mb-5 px-4" variant="info" type="submit">
                 Submit
               </Button>
             </Form>

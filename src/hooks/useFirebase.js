@@ -11,6 +11,7 @@ import {sendEmailVerification,
       onAuthStateChanged, 
       } from "firebase/auth";
 import initializeAuthentication from "../firebase/firebase.init";
+import Service from '../components/Service/Service';
 
 initializeAuthentication()
 
@@ -31,12 +32,7 @@ const useFirebase = () => {
  //google sign in
 
    function signInWithGoogle(){
-    signInWithPopup(auth, googleProvider)
-    .then(result =>{
-        setUser(result.user);
-    }).catch(error => {
-        setError(error.message)
-    });
+    return signInWithPopup(auth, googleProvider)
 }
 
 //Github sign in
@@ -83,14 +79,11 @@ function signInWithEmail(e){
    const unsubscribe = onAuthStateChanged(auth, (signInUser) => {
         if (signInUser) {
           setUser(signInUser);
-         
         }
       });
       return () => unsubscribe;
   },[]);
-
-
-  // logout
+ // logout
   function logOut(){
     signOut(auth)
          .then((result) => {
@@ -161,3 +154,4 @@ function getPhoto(e){
 };
 
 export default useFirebase; 
+

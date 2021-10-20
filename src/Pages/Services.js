@@ -1,11 +1,26 @@
 import React from 'react';
+import Service from '../components/Service/Service';
+import useAuth from '../hooks/useAuth';
 
 const Services = () => {
+    const {services} = useAuth()
     return (
-        <div>
-            <h1>this is service </h1>
-        </div>
+        <div className="container">
+            <h2 className="text-primary">Our Services</h2>
+            <div className="row">
+
+         {
+              services.map(service=><Service
+                key={service.id}
+                service={service}
+                ></Service>) 
+        }
+</div>
+
+</div>
+       
     );
 };
 
 export default Services;
+

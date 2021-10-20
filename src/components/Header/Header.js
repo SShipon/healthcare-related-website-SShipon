@@ -20,6 +20,7 @@ const Header = () => {
     <Navbar.Brand href="#home"><img width="70px" src={log} alt="" /> <span className="font-size">Comilla Morden Hospital</span> </Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
+      
       <Nav className="ms-auto align-items-center">
         <Nav.Link as={NavLink} className="text-white" to="/home">Home</Nav.Link>
 

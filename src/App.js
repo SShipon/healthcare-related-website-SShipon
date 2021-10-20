@@ -6,15 +6,13 @@ import About from './Pages/About';
 import Home from './Pages/Home';
 import Contact from './Pages/Contact';
 import Services from './Pages/Services';
-import Cart from './Pages/Cart';
 import Login from './Pages/Login';
 import Signup from './Pages/Signup';
 import PagesNotFound from './Pages/PageNotFound';
 import AuthProvider from './contexts/AuthProvider';
 import Footer from './components/Footer/Footer';
-
-
-
+import HospitalDetails from './components/HospitalDetails/HospitalDetails';
+import PrivetRoute from './components/PrivetRoute/PrivetRoute';
 function App() {
   return (
     <div> 
@@ -44,10 +42,10 @@ function App() {
           <Services>
           </Services>
         </Route>
-
-        <Route path="/cart">
-          <Cart></Cart>
-        </Route>
+    
+         <PrivetRoute path="/hospitaldetails/:id">
+          <HospitalDetails></HospitalDetails> 
+        </PrivetRoute>
 
         <Route path="/login">
          <Login></Login>
@@ -63,7 +61,6 @@ function App() {
          </Switch>
          <Footer></Footer>
      </Router>
-     
      </AuthProvider>
    
     </div>
@@ -71,3 +68,5 @@ function App() {
 }
 
 export default App;
+
+

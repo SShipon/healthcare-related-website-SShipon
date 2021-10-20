@@ -53,8 +53,8 @@ const Footer = () => {
                         <li><i class="fas fa-home"></i> Comilla Shaktola</li>
                         <li><i class="fas fa-phone"></i> +8801703059461</li>
                         <li><i class="fas fa-question-circle"></i> +4574754</li>
-                        <li><a href="https://www.facebook.com/mdshipon.chowdhury.940"><i class="fab fa-facebook"></i></a></li>
-                        <li><a href="https://www.linkedin.com/in/md-shipon-214207214/"><i class="fab fa-linkedin-in"></i></a></li>
+                        <li><a href="https://www.facebook.com/mdshipon.chowdhury.940"><i class="fab fa-facebook"></i></a> Facebook</li>
+                        <li><a href="https://www.linkedin.com/in/md-shipon-214207214/"><i class="fab fa-linkedin-in"></i></a> Linkdin</li>
                     </ul>
                     </div>
                 </div>

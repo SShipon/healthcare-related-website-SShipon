@@ -1,25 +1,40 @@
 import React from "react";
-import { Col, Form, FormControl, InputGroup, Row } from "react-bootstrap";
+import { Col, Form, FormControl, InputGroup,Row } from "react-bootstrap";
 import useAuth from "../hooks/useAuth.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faLock } from "@fortawesome/free-solid-svg-icons";
 import { NavLink, } from "react-router-dom";
 import google from "./../assets/images/google.png";
 import github from "./../assets/images/github.png";
+import { useHistory, useLocation } from 'react-router';
 
 const Login = () => {
-  const {AllContexts} = useAuth()
-
+  const {AllContexts} = useAuth();
   const {
+    setUser,
+    setError,
     getEmail,
     getPassword,
     signInWithEmail,
     error,
-    signInWithGoogle,
+    signInWithGoogle, 
     signInWithGithub,
   } = AllContexts;
+  const location = useLocation()
+  const redirect_uri = location.state?.from || '/home';
+  console.log(redirect_uri);
+  // console.log(redirect_uri)
+ const history = useHistory()
+  const googleLogIn = (e)=>{
+    e.preventDefault()
+    signInWithGoogle()
+      .then(result =>{
+        setUser(result.user)
+        history.push(redirect_uri)
+      })
+  }
 
-  return (
+ return (
     <div className="text-center my-4">
       <h2 className="text-info">Please Login</h2>
       <p className=" mt-2">Login with Email & Password</p>
@@ -75,7 +90,7 @@ const Login = () => {
       <p className="mt-3">Or</p>
       <p> Login with</p>
       <div>
-        <button onClick={signInWithGoogle} >
+        <button onClick={ googleLogIn} >
           <img src={google} width="46px" alt="google-icon" />
         </button>
         
@@ -86,5 +101,5 @@ const Login = () => {
     </div>
   );
 };
-
 export default Login;
+

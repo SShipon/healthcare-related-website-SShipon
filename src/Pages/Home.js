@@ -1,11 +1,13 @@
 import React from 'react';
+import Services from './Services';
 
 
 const Home = () => {
     
     return (
         <div>
-           <h1>this is Home page</h1>
+          
+           <Services/>
         </div>
     );
 };
