@@ -28,7 +28,7 @@ const Header = () => {
         
         <Nav.Link as={NavLink} className="text-white" to="/contact">Contact</Nav.Link>
 
-        <Nav.Link as={NavLink} className="text-white" to="/services">Services</Nav.Link>
+        <Nav.Link as={NavLink} className="text-white" to="/services">Service</Nav.Link>
 
         <Nav.Link className="text-white" to="/cart"> <FontAwesomeIcon icon={faHandHoldingMedical} /></Nav.Link>
 

@@ -13,18 +13,17 @@ import AuthProvider from './contexts/AuthProvider';
 import Footer from './components/Footer/Footer';
 import HospitalDetails from './components/HospitalDetails/HospitalDetails';
 import PrivetRoute from './components/PrivetRoute/PrivetRoute';
+
 function App() {
   return (
     <div> 
      <AuthProvider>
      <Router>
        <Header></Header>
-
          <Switch>
             <Route exact path="/">
               <Home></Home>
             </Route>
-
             <Route path="/home">
               <Home></Home>
             </Route>

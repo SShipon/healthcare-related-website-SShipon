@@ -4,9 +4,7 @@ import Bounce from "react-reveal/Bounce";
 import Zoom from "react-reveal/Zoom";
 const About = () => {
   return (
-    <div
-
-    >
+    <div >
       <Container>
         <Zoom>
           <h2 className="text-center text-white mb-4">

@@ -6,7 +6,7 @@ const Services = () => {
     const {services} = useAuth()
     return (
         <div className="container">
-            <h2 className="text-primary">Our Services</h2>
+            <h2 className="text-primary text-center">Our Services</h2>
             <div className="row">
 
          {

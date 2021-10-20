@@ -3,13 +3,15 @@ import { Redirect, Route } from 'react-router';
 import useAuth from '../../hooks/useAuth';
 
 const PrivetRoute = ({ children, ...rest }) => {
-    const {user} = useAuth();
+    const {AllContexts} = useAuth();
+    const {user}=AllContexts;
+    const {displyName}=user;
     return (
         <div>
              <Route
       {...rest}
       render={({ location }) =>
-        (user?.email) ? (
+        displyName ? (
           children 
         ) : (
           <Redirect

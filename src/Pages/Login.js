@@ -7,7 +7,6 @@ import { NavLink, } from "react-router-dom";
 import google from "./../assets/images/google.png";
 import github from "./../assets/images/github.png";
 import { useHistory, useLocation } from 'react-router';
-
 const Login = () => {
   const {AllContexts} = useAuth();
   const {
