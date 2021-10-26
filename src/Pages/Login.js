@@ -11,7 +11,6 @@ const Login = () => {
   const {AllContexts} = useAuth();
   const {
     setUser,
-    setError,
     getEmail,
     getPassword,
     signInWithEmail,

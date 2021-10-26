@@ -49,7 +49,7 @@ const Footer = () => {
                       {/*colum 4*/}
                    <div className="col-md-3 col-sm-6">
                          <h4>FOLLOW</h4>
-                    <ul className="list-unstyled font-awsome">
+                    <ul className="list-unstyled font-awsome ">
                         <li><i class="fas fa-home"></i> Comilla Shaktola</li>
                         <li><i class="fas fa-phone"></i> +8801703059461</li>
                         <li><i class="fas fa-question-circle"></i> +4574754</li>

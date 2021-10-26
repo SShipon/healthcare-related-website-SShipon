@@ -2,15 +2,15 @@ import React from "react";
 import { Container, Row, Col, Form } from "react-bootstrap";
 import Bounce from "react-reveal/Bounce";
 import Zoom from "react-reveal/Zoom";
-import images from './../assets/images/doctors/doctors-1.jpg'
-import image from './../assets/images/doctors/doctors-2.jpg'
+import images from './../assets/images/doctors/shipon.png'
+import image from './../assets/images/doctors/galib.png'
 
 const About = () => {
   return (
     <div>
       <Container>
         <Zoom>
-          <h2 className="text-center text-primary mb-4">
+          <h2 className="text-center text-info mb-4 mt-5">
           Finding child care just got easier.
           </h2>
         </Zoom>
@@ -39,24 +39,38 @@ const About = () => {
             </Bounce>
           </Col>
         </Row>
- 
+                                    
         <div>
         <div className="container">
+          <h1 className="text-center text-warning mt-3">Your Temas</h1>
+          <hr />
           <div className="row">
-            <div className="col-sm-6 col-12">
+            <div className="col-sm-6 col-12 text-center  mt-5">
              <img style={{width:'150px',height:'150px', borderRadius:'50%'}} src={images}alt="" />
-             <h5>Dotor: Nazmul Islam </h5>
-             <p>The Red House Is An Excellent CQC Registered Nursing Home. Very Best Individual Care.
-             43 Skinners Lane, Ashtead
-             +44 1372 274552</p>
+             <h5>Shamsul Islam Shipon </h5>
+             <h6>front-end developers</h6>
+             <p><span>skill: Have been working as a Junior developer your skill-Html,Css,Bootstrap,Javascript,ES6,API,Recat.js,React router Dom, Firebase authentication react   </span></p>
+           
+             <ul className="list-unstyled  align-items-center d-inline-flex" >
+               <li><i className="fab fa-facebook p-3"></i> </li>
+               <li><i className="fab fa-linkedin-in"></i></li>
+              
+             </ul>
+            
             </div>
-            <div className="col-sm-6 col-12">
+            <div className="col-sm-6 col-12 text-center  mt-5">
             
              <img style={{width:'150px',height:'150px', borderRadius:'50%'}} src={image}alt="" />
-             <h5>Dotor: Farzana Shathi</h5>
-             <p>The Red House Is An Excellent CQC Registered Nursing Home. Very Best Individual Care.
-             43 Skinners Lane, Ashtead
-             +44 1372 274552</p>
+             <h5>Asadullahil Ghalib</h5>
+             <h6>front-end developers</h6>
+             <p><span>skill: Have been working as a Junior developer your skill-Html,Css,Bootstrap,Javascript,ES6,API,Recat.js,React router Dom, Firebase authentication react  </span></p>
+             
+             <ul className="list-unstyled align-items-center d-inline-flex ">
+               <li><i className="fab fa-facebook p-3 "></i> </li>
+               <li><i className="fab fa-linkedin-in "></i></li>
+              
+             </ul>
+            
             </div>
           
           </div>
@@ -66,7 +80,7 @@ const About = () => {
         <Row className="mt-4">
           <Col md>
             <Bounce bottom>
-              <h5 className="text-white">Sign up for our monthly newsletter</h5>
+              <h5 className="">Sign up for our monthly newsletter</h5>
               <p className="text-muted">
                 Be the first to know about news and updates.We never share you
                 mail with others. Trust us!
@@ -76,7 +90,7 @@ const About = () => {
           <Col md className="d-flex align-items-center">
             <Bounce bottom>
               <Form className="w-100">
-                <Form.Label className="text-white">
+                <Form.Label className="text-warning">
                   Leave your mail below
                 </Form.Label>
                 <Form.Group

@@ -1,4 +1,4 @@
-import React from "react";
+ import React from "react";
 import { Container, Row, Col, Form } from "react-bootstrap";
 import Bounce from "react-reveal/Bounce";
 import Zoom from "react-reveal/Zoom";
@@ -97,3 +97,4 @@ const About = () => {
 };
 
 export default About;
+ 
